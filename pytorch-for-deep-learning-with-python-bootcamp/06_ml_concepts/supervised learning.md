@@ -40,25 +40,25 @@ Métricas para avaliar classificadores:
   - **Quando usar**: Para classes balanceadas (ex.: 50 gatos e 50 cachorros).  
 
 - **Recall** (\( \text{TPR} \)):  
-  - Fórmula: 
-    \[
+  - Fórmula:  
+    ```math
     \text{Recall} = \frac{\text{TP}}{\text{TP} + \text{FN}}
-    \]  
+    ```  
   - Mede a capacidade do modelo de identificar todos os casos relevantes no conjunto de dados.  
 
 - **Precision**:  
-  - Fórmula: 
-    \[
+  - Fórmula:  
+    ```math
     \text{Precision} = \frac{\text{TP}}{\text{TP} + \text{FP}}
-    \]  
+    ```  
   - Mede a habilidade do modelo de identificar apenas os dados relevantes.  
 
 - **F1 Score**:  
   - Combina **Precision** e **Recall**.  
-  - Fórmula: 
-    \[
+  - Fórmula:  
+    ```math
     \text{F1} = 2 \cdot \frac{\text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}}
-    \]  
+    ```  
   - É a média harmônica entre Precision e Recall.
 
 ### Confusion Matrix
@@ -80,10 +80,18 @@ Avaliação para valores contínuos (não categóricos):
   - **Contras**: Pode não penalizar adequadamente grandes erros.  
 
 - **Mean Squared Error (MSE)**: Média dos erros elevados ao quadrado.  
+  - Fórmula:  
+    ```math
+    \text{MSE} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
+    ```  
   - **Prós**: Penaliza fortemente outliers.  
   - **Contras**: Difícil de interpretar devido à escala quadrática.  
 
 - **Root Mean Squared Error (RMSE)**: Raiz quadrada do MSE.  
+  - Fórmula:  
+    ```math
+    \text{RMSE} = \sqrt{\text{MSE}}
+    ```  
   - Mais interpretável que o MSE, já que retorna na mesma unidade dos dados originais.  
 
 ---
@@ -94,4 +102,19 @@ Modelos usados quando os dados **não possuem rótulos**.
 ### Exemplos:
 - **Clustering**:  
   - Agrupa dados semelhantes.  
-  - Exemplo: Em vez
+  - Exemplo: Em vez de separar apenas gatos e cachorros, pode criar grupos como "cachorros grandes", "cachorros pequenos" e "gatos".  
+
+- **Anomaly detection**:  
+  - Detecta irregularidades, como transações fraudulentas.  
+
+- **Dimensionality reduction**:  
+  - Reduz o número de variáveis ou features em um dataset, mantendo as informações mais relevantes.  
+
+---
+
+## Passo-a-passo
+1. **Data acquisition**: Coleta de dados.  
+2. **Data cleaning**: Limpeza e pré-processamento dos dados.  
+3. **Model training & building**: Treinamento e construção do modelo.  
+4. **Transformation**: Aplicação do modelo ao conjunto de dados para gerar insights.  
+5. **Deploy**: Implantação do modelo em produção.  
